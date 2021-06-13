@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+<body data-spy="scroll" data-target=".fixed-top">
+    <!-- Register -->
+    <div id="code" class="form-1">
+        <div class="container">
+            <section class="contact-form">
+
+                    <form>
+                        {%csrf_token%}
+                        
+                        
+                        <div class="row">
+                            <div class="column">
+                                <table width=50%>
+                                <td width=50%>
+                                    <th>
+                                        <label for="code"></label>
+                                        <legend><h1>Code</h1></legend>
+                                    </th>
+                                    <th><div class="input-group">
+                                        <label for="name">language</label>
+                                        <select id="language" name="language" class="editor-lang-select nice-select">
+                                            <option value="cpp">C++</option>
+                                            <option value="c">C</option>
+                                            <option value="cs">C#</option>
+                                            <option value="java">Java</option>
+                                            <option value="py">Python3</option>
+                                            <option value="rb">Ruby</option>
+                                            <option value="kt">Kotlin</option>
+                                            <option value="swift">Swift</option>
+                                        </select>
+                                        </div>
+                                    </th>
+                                </td>
+                            </table>
+                            <textarea id="code" name="code" rows="20" cols="65">{{code}}</textarea>
+                        </div>
+                        <table style="padding: 5px" width=50%>
+                            <td>
+                                <th>
+                                    <div class="input-group"></div>
+                                        <label for="input"></label>
+                                        <legend><h1>Input</h1></legend>  
+                                        <textarea id="input" name="input" rows="6" cols="20"></textarea>
+                                      </div>
+                                </th>
+                                <th >
+                                    <div class="input-group">
+                                        <label for="ouput"></label>
+                                        <legend><h1>output</h1></legend> 
+                                        <textarea id="output" name="output" rows="6" cols="20" readonly>{{output}}</textarea>
+                                    </div>
+                                </th>
+                            </td>
+                        </table>
+                        
+                        <button type="submit" formmethod="POST" formaction="codex">Run</button>
+                        <button type="submit" formmethod="POST" formaction="done">submit</button>
+                    </form>
+                </div>
+                    <div class="column">
+                    <table style="padding-left:500px;">
+                        <td>
+                            {%for ob in obj%}
+                            <tr>{{ob.desc}}</tr>
+                            <tr>{{ob.sin}}</tr>
+                            <tr>{{ob.out}}</tr>
+                            {%endfor%}
+                        </td>
+                    </table>
+                </div>
+          </section>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+

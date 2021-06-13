@@ -1,0 +1,155 @@
+{% extends 'accounts/main.html' %}
+{% block content %}
+
+<div style="   min-height:400px;background:#c2c2c2">
+
+<!--div class="row d-flex justify-content-center mt-100">
+
+
+<div class="progress blue"> <span class="progress-left"> <span class="progress-bar"></span> </span> <span class="progress-right"> <span class="progress-bar"></span> </span>
+            <div class="progress-value">90%</div>
+        </div>-->
+       
+    {% if user.is_authenticated%}
+<br>
+<div class="container" style="background:#c2c2c2;position:relative;left:40px;">
+  <div class="row">
+    <div class="col-sm-6">
+        <div class="cardleft">
+            <div class="user-info">
+                <div class="name"><center><b>Profile</b></center></div>
+                <br>
+                <br>
+                <br>
+                <br>
+            <div class="details">
+                <table class="d">
+                    <tr class="trow">
+                        <td><b>Register no :</b></td>
+                        <td>{{user.username}}</td>
+                    </tr>
+                    <tr  class="trow">
+                        <td><b>Cluster :</b></td>
+                        <td>{{category}} </td>
+                    </tr>
+                    <tr  class="trow">
+                        <td><b>Email Id :</b></td>
+                        <td>{{user.email}}</td>
+                    </tr>
+                </table>
+            </div>
+
+            </div>
+
+
+
+         </div></div>
+    <div class="col-sm-5">
+        <div class="cardright">
+        <div class="work">
+            <div class="score">
+                <b>Score Card</b>
+            </div>
+        </div>
+         <div class="ranks">
+             <table class="ranktable">
+                 <tr>
+                        <td class="rrr">{{total_marks}}</td>
+                        {%ifequal category "SEEKER(LEVEL 1)" %}
+                        <td class="rrr">{{ranks}}</td>
+                        {%endifequal%}
+                        {%ifequal category "PRACTITIONER(LEVEL 2)" %}
+                        <td class="rrr">{{rankpr}}</td>
+                        {%endifequal%}
+                        {%ifequal category "CHALLENGER(LEVEL 3)" %}
+                        <td class="rrr">{{rankc}}</td>
+                        {%endifequal%}
+                        {%ifequal category "PERFORMER(LEVEL 4)" %}
+                        <td class="rrr">{{rankpe}}</td>
+                        {%endifequal%}
+
+
+                    </tr>
+                 <tr>
+                     <td class="rr">Your Total Score</td>
+                     <td class="rr">Your  Rank</td>
+                 </tr>
+             </table>
+         </div>
+         <div class="contests">
+             <table class="d">
+                    <tr class="trow">
+                        <th>Event</b></th>
+                        <th>Score</th>
+                        <th>Rank</th>
+                    </tr>
+                    <tr  class="trow">
+                        <td><b>Daily Challenge</b></td>
+                        <td>{{dmarks}}</td>
+                        {%ifequal category "SEEKER(LEVEL 1)" %}
+                        <td>{{dasr}}</td>
+                        {%endifequal%}
+                        {%ifequal category "PRACTITIONER(LEVEL 2)" %}
+                        <td>{{dappr}}</td>
+                        {%endifequal%}
+                        {%ifequal category "CHALLENGER(LEVEL 3)" %}
+                        <td>{{dacr}}</td>
+                        {%endifequal%}
+                        {%ifequal category "PERFORMER(LEVEL 4)" %}
+                        <td>{{daper}}</td>
+                        {%endifequal%}
+                    </tr>
+                    <tr  class="trow">
+                        <td><b>Weekly Challenge</b></td>
+                        <td>{{wmarks}}</td>
+                        {%ifequal category "SEEKER(LEVEL 1)" %}
+                        <td>{{wasr}}</td>
+                        {%endifequal%}
+                        {%ifequal category "PRACTITIONER(LEVEL 2)" %}
+                        <td>{{wappr}}</td>
+                        {%endifequal%}
+                        {%ifequal category "CHALLENGER(LEVEL 3)" %}
+                        <td>{{wacr}}</td>
+                        {%endifequal%}
+                        {%ifequal category "PERFORMER(LEVEL 4)" %}
+                        <td>{{waper}}</td>
+                        {%endifequal%}
+                    </tr>
+                    <tr  class="trow">
+                        <td><b>Monthly Challenge</b></td>
+                        <td>{{mmarks}}</td>
+                        {%ifequal category "SEEKER(LEVEL 1)" %}
+                        <td>{{masr}}</td>
+                        {%endifequal%}
+                        {%ifequal category "PRACTITIONER(LEVEL 2)" %}
+                        <td>{{mappr}}</td>
+                        {%endifequal%}
+                        {%ifequal category "CHALLENGER(LEVEL 3)" %}
+                        <td>{{macr}}</td>
+                        {%endifequal%}
+                        {%ifequal category "PERFORMER(LEVEL 4)" %}
+                        <td>{{maper}}</td>
+                        {%endifequal%}
+                    </tr>
+                </table>
+            </div>
+         </div>
+        <div id="piechart"></div>
+
+         </div>
+    </div>
+  </div>
+
+{%else%}
+<div>
+  <center>
+    <h2 style="color:#fff">please login to view your profile and Scorecard </h2>
+   </center>
+
+</div>
+{%endif%}
+<br>
+</div>
+
+
+{% endblock %}

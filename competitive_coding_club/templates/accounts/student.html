@@ -1,0 +1,129 @@
+{% extends 'accounts/main.html' %}
+{%block content%}
+
+<div class="row">
+	<div class="col" id="l">
+
+		<h2 class='cccl'>MVGR<br><br>Competative Coding Club</h2>
+
+
+	</div>
+	<div class="col" id="r">
+
+	 <div class="main"> 
+	<div class="container-fluid h-100">
+		<div class="d-flex justify-content-center h-100">
+			<div class="user_card">
+				<div class="d-flex justify-content-center">
+					<h3 id="form-title">REGISTER ACCOUNT</h3>
+				</div>
+				<div class="d-flex justify-content-center form_container">
+
+					<form method="POST" action="">
+                        {% csrf_token %}
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
+							<input type="text" id="username" value="{{username}}" name="username" readonly>
+						</div>
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fa fa-phone" aria-hidden="true"></i></span>
+							</div>
+							<input type="text" id="phone" placeholder="phone" name="phone">
+						</div>
+						<div class="input-group mb-3">
+  							<div class="input-group-prepend">
+  								<span class="input-group-text"><i class="fa fa-graduation-cap" aria-hidden="true"></i>
+  									</span>
+    							<label class="input-group-text" for="inputGroupSelect01">Year Of Study</label>
+  							</div>
+  						<select class="custom-select" name="yearOfStudy" id="inputGroupSelect01">
+    						  
+   							  <option selected value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option></span>
+  						</select>
+					   </div>
+					   
+					   	
+					   		<div class="cat">
+					   		What Coding Category do you belong to:	
+					   		</div>
+					   
+					
+					   <div class="input-group mb-3">
+  							<div class="input-group-prepend">
+  								<span class="input-group-text"><i class="fa fa-certificate" aria-hidden="true"></i>
+  									</span>
+    							<label class="input-group-text" for="category">Category</label>
+  							</div>
+  						<select class="custom-select" name="category" id="category">
+                              <option value="SEEKER(LEVEL 1)">seeker(level 1)</option>
+                              <option value="PRACTITIONER(LEVEL 2)">practitioner(level 2)</option>
+                              <option value="CHALLENGER(LEVEL 3)">challenger(level 3)</option>
+                              <option value="PERFORMER(LEVEL 4)">performer(level 4)</option></span>
+                            </select>
+					   </div>
+						<!--<div class="input-group mb-0">
+                            <div class="input-group-append">
+                            <label for="yearOfStudy"><span class="input-group-text"><i class="fa fa-book" aria-hidden="true"></i></div><p class="lab" style="color:rgb(128, 128, 128)">year of study :</p></label>
+                            <select style="width:80px;height:28px" name="yearOfStudy" id="yearOfStudy">
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option></span>
+                            </select>
+						</div>
+						<div class="input-group mb-3">
+                            <div class="input-group-append">
+							<div><label for="category"><span class="input-group-text">
+                                <i class="fa fa-certificate" aria-hidden="true"></i>
+                            </div>
+                            <p class="lab" style="color:rgb(128, 128, 128)">what coding category do you belong to:</p></label></div>
+                            <select name="category" id="category">
+                              <option value="SEEKER(LEVEL 1)">seeker(level 1)</option>
+                              <option value="PRACTITIONER(LEVEL 2)">practitioner(level 2)</option>
+                              <option value="CHALLENGER(LEVEL 3)">challenger(level 3)</option>
+                              <option value="PERFORMER(LEVEL 4)">performer(level 4)</option></span>
+                            </select>
+                            
+						</div>-->
+				   		<div class="d-flex justify-content-center mt-3 login_container">
+				 			<input class="btn login_btn" type="submit" value="register">
+				   		</div>
+					</form>
+				</div>
+                {{form.errors}}
+				<div class="mt-4">
+					<div class="d-flex justify-content-center links"><p class="cat1">
+						Already have an account?</p><a href="{% url 'login' %}" class="ml-2">Login</a>
+					</div>
+				</div>
+			</div>
+
+	</div>
+	<script>
+						/* Because i didnt set placeholder values in forms.py they will be set here using vanilla Javascript
+		//We start indexing at one because CSRF_token is considered and input field 
+		 */
+
+		//Query All input fields
+		var form_fields = document.getElementsByTagName('input')
+		form_fields[1].placeholder='Re-enter Registration number..';
+		form_fields[2].placeholder='Phone Number..';
+
+
+		for (var field in form_fields){	
+			form_fields[field].className += ' form-control'
+		}
+	</script>
+	</div>
+</div>
+</div>
+</div>
+	</div>
+
+{%endblock%}

@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  
+  }
+  
+  
+  .container {
+  position:relative;
+  left:40px;
+  
+  }
+  
+  .cardleft{
+  
+  height:600px;
+    border-radius: 5px;
+    padding: 0rem 5rem;
+    overflow:hidden;
+    box-shadow: 0 7px 7px #333333, 0px 0px 10px #333333;
+    background-color:#000;
+    color: #fff;
+  
+  }
+  .cardright{
+   padding: 0rem 5rem;
+    height:600px;
+    border-radius: 5px;
+      overflow:hidden;
+    box-shadow: 0 7px 7px #333333, 0px 0px 10px #333333;
+    background-color:#000;
+    color: #fff;
+  }
+  
+  table{
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+          box-sizing: border-box;
+          display: table;
+  }
+  .d tr, .d td{
+  border-bottom: 1px solid #C0C0C0;
+  
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  .user-info
+  {
+  padding: 50px 5px 5px 5px;
+  font-size:17px;
+  }
+  
+  .score {
+  
+  font-size:40px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding: 50px 15px 15px 5px;
+  }
+  
+  .name{
+  font-size:45px;
+  font-family:bold;
+  
+  }
+  
+  .ranks{
+  
+  position:relative;
+  left:10px;
+  padding: 5px 35px 25px 5px;
+  }
+  .rr{
+  text-align: center;
+  font-size:12px;
+  border-left: 1px solid #000;
+      border-right: 1px solid #000;
+  }
+  .rrr{
+  text-align: center;
+  font-size:30px;
+  border-left: 1px solid #000;
+      border-right: 1px solid #000;
+  }
+  .ranktable{
+  border:none;
+      border-collapse: collapse;
+  }
+  table td:first-child {
+      border-left: none;
+  }
+  
+  table td:last-child {
+      border-right: none;
+  }

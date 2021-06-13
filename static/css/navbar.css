@@ -1,0 +1,25 @@
+.navbar { background-color: #484848; margin:0px;   }
+.navbar .navbar-nav .nav-link { color: #fff; padding: 0px 10px 0px 10px;}
+    .navbar .navbar-nav .nav-link:hover  { color: #fbc531; }
+#topheader .navbar-nav li.active > a {
+background-color: #333;
+color: #fff;
+}
+#end{
+justify-content-end;
+}
+navbar-toggler{
+color:white;
+background:white;
+}
+.nav-item{
+display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+
+#it{
+display: flex;
+  justify-content: center;
+  align-items: center;
+  }

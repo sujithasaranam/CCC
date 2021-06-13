@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static '/js/lib/ace.js' %}"></script>
+    <script src="{% static '/js/lib/theme-monokai.js' %}"></script>
+    <script src="{% static '/js/ide.js' %}"></script>
+    <!--<script src="{% static '/js/codetext.js' %}"></script>-->
+    <script>
+        var editor = ace.edit('editor');
+        var textarea = $('textarea[name="code"]');
+        editor.getSession().on("change", function () {
+            textarea.val(editor.getSession().getValue());
+        });
+
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{% static '/css/cccide.css' %}">
+</head>
+<body>
+<div class="container-fluid">
+<div class="row">
+  <div class="col-sm-6">
+
+    {%for pro in desc%}
+    <h1>{{pro.heading}}</h1>
+    <h4>{{pro.problem}}</h4>
+    <pre>{{pro.des}}</pre>
+
+    {%endfor%}
+        
+  </div>
+        <div class="col-sm-6">
+            
+        <legend><h1>write your code here</h1></legend>
+        <div class="container-fluid" id="plate">        
+            <form>
+            {%csrf_token%}
+                <div class="row">
+  
+                <!--Raffhan-->
+                
+            
+            
+                <div class="control-panel">
+                Select Language:
+                &nbsp; &nbsp;
+                <select id="languages" class="languages" name="language" onchange="changeLanguage()">
+                   <!-- <option value="c"> C </option>
+                    <option value="cpp"> C++ </option>
+                    <option value="php"> PHP </option>
+                    <option value="python"> Python </option>
+                    <option value="node"> Node JS </option>-->
+                    <option value="{{language}}">{{language}}</option>
+                    <option value="cpp">C++</option>
+                    <option value="c" >C</option>
+                    <option value="cs">C#</option>
+                    <option value="java">Java</option>
+                    <option value="py">Python3</option>
+                    <option value="rb">Ruby</option>
+                    <option value="kt">Kotlin</option>
+                    <option value="swift">Swift</option>
+                </select>
+                    </div>
+            </div>
+                <div class="row">
+                    <!-- this is Code Editor ni dantlo textbox-->
+
+                    <label for="editor">Editor</label>
+                <div id="editor" class="editor">{{code}}</div>
+                <textarea class="col-md-6" name="code" id="code" rows="5" cols="70" style="display: none;">{{code}}</textarea>
+                </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="input-group">
+                                        <label for="input"></label>
+                                        <legend><h3>Input</h3></legend>  
+                                        <textarea id="input" name="input" rows="6" cols="20"></textarea>
+                                      </div>
+                    </div>
+                        <div class="col">
+                            <div class="input-group">
+                                        <label for="ouput"></label>
+                                        <legend><h3>output</h3></legend> 
+                                        <textarea id="output" name="output" rows="6" cols="20" readonly>{{output}}</textarea>
+                                    </div>
+                        </div>
+
+                </div>
+                <br>
+                <div class="rows">
+                    <button class="btn btn-secondary" type="submit" formmethod="POST" formaction="codex">Run</button>
+                        <button class="btn btn-primary" type="submit" formmethod="POST" formaction="done">submit</button>
+                    
+                </div>
+               
+                </form>
+                </div>
+                <div class="row">
+                <table style="padding-left:500px;">
+                        <td>
+                            {%for ob in obj%}
+                            <tr>{{ob.desc}}</tr>
+                            <tr>{{ob.sin}}</tr>
+                            <tr>{{ob.out}}</tr>
+                            {%endfor%}
+                        </td>
+                    </table>
+            
+
+</div>
+</body>
+</html>

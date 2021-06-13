@@ -1,0 +1,46 @@
+{% extends 'accounts/main.html' %}
+{% block content %}
+<div style="min-height:350px;background:#242424">
+<div >
+<br>
+<br>
+<!--div class="row d-flex justify-content-center mt-100">
+
+
+<div class="progress blue"> <span class="progress-left"> <span class="progress-bar"></span> </span> <span class="progress-right"> <span class="progress-bar"></span> </span>
+            <div class="progress-value">90%</div>
+        </div>-->
+    {% if user.is_authenticated %}
+    <div id="container" class="chartt" style="height: 300p">
+      <input type="hidden" id="myVar" name="variable" value="{{sp}}">
+      <input type="hidden" id="myVar1" name="variable" value="{{sf}}">
+    </div>
+         {% ifequal category "PERFORMER(LEVEL 4)" %}
+         <h4 align="center" style="color: #fff;padding:15px 0px 0px 0px;">Hurray!!!Good work {{user.username}}!!you are in {{category}} practice more to reach greater heights</h4>
+         {% else %}
+         <h4 align="center" style="color: #fff;padding:15px 0px 0px 0px;">Hello {{user.username}}!!you are in {{category}} practice more and promote to the next level</h4>
+         {% endifequal %}
+         {%else%}
+         <div>
+           <center>
+                 <h2 style="color:#fff">please login to view your score</h2>
+            </center>
+         </div>
+         {%endif%}
+
+</div>
+<br>
+
+
+    <center>
+<div >
+    <a href="{% url 'daily' %}"> <button type="button" class="btn btn-dark btn-lg " style="background:#64b5f6;"><div class="wdm">Daily assesments</div></button></a>
+    <a href="{% url 'weekly' %}"> <button type="button" class="btn btn-dark btn-lg" style="background:#ef6c00;"><div class="wdm">Weekly assesments</div></button></a>
+    <a href="{% url 'monthly' %}"> <button type="button" class="btn btn-dark btn-lg" style="background:#1976d2;" ><div class="wdm">Monthly assesments</div></button></a>
+
+</div>
+        <br>
+        </center>
+
+</div>
+{% endblock %}

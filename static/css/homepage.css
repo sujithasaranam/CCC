@@ -1,0 +1,67 @@
+
+    /* Add a gray background color and some padding to the footer */
+    body{
+      font-size:18px;
+      background-color:#1E549F;
+      color:#f2f2f2;
+      }
+      .hhh{
+      padding-right: 30px;
+      padding-left: 80px;
+      background-color:black;
+      padding-top:10px;
+      padding-bottom:10px;
+      color:white;
+      }
+      .divi img{
+      height: 430px;
+      
+      }
+      .mmm
+      {
+      padding-right: 40px;
+      }
+          .carousel-inner img {
+            width: 100%; /* Set width to 100% */
+            min-height: 200px;
+            max-height:200px;
+          }
+      
+          /* Hide the carousel text when the screen is less than 600 pixels wide */
+          @media (max-width: 600px) {
+            .carousel-caption {
+              display: none;
+            }
+          }
+      #c1{
+      background-color:#081F37;
+      height:430px;
+      
+      
+      
+      }
+      #c2{
+      background-color:#081F37;
+      height:430px;
+      
+      }
+      #c3{
+      background-color:#081F37;
+      height:430px;
+      }
+      #c4{
+      background:#081F37;
+      height:430px;
+      }
+      footer{
+      
+      padding-top:30px;
+      }
+      #footer
+      {
+      background-color:black;
+      }
+      .container-fluid .container{
+      background-color:#fff;
+      }
+      

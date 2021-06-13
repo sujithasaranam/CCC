@@ -1,0 +1,30 @@
+
+.control-panel {
+    background: lightgray;
+    text-align: right;
+    padding: 4px;
+    font-family: sans-serif;
+
+}
+.languages {
+    background: white;
+    border: 1px solid gray;
+
+}
+#editor { height: 350px;
+float: left; width: 100%
+ }
+#plate{
+	background-color: #bbb;
+	width: 100%;
+
+}
+
+textarea{
+	height: 80px;
+	width: 150px;
+}
+label{
+	font-family: sans-serif;
+
+}		

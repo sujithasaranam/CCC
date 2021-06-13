@@ -1,0 +1,147 @@
+.user_card {
+    width: 350px;
+    margin-top: auto;
+    margin-bottom: auto;
+    background: #000;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+}
+    #form-title{
+    color: #fff;
+
+}
+
+.login_btn {
+    width: 100%;
+    background: #33ccff !important;
+    color: white !important;
+}
+.login_btn:focus {
+    box-shadow: none !important;
+    outline: 0px !important;
+}
+.login_container {
+    padding: 0 2rem;
+}
+.input-group-text {
+    background: #f7ba5b !important;
+    color: white !important;
+    border: 0 !important;
+    border-radius: 0.25rem 0 0 0.25rem !important;
+}
+.input_user,
+.input_pass:focus {
+    box-shadow: none !important;
+    outline: 0px !important;
+}
+#messages{
+
+    color: #fff;
+    padding: 10px;
+    margin-top: 10px;
+}
+#r{
+padding-top:50px;
+
+}
+.cat{
+	position: relative; 
+	color: white;		
+	top:-7px;
+	left:5px;
+		 font-family: Arial, Helvetica, sans-serif;
+	
+}
+body {
+margin: 0;
+padding: 0;
+height: 100%;
+background-color: rgb(255, 255, 255) !important;
+}
+.container {
+
+background: #fff;
+}
+#spacee
+{
+padding-top: 50px;
+padding-bottom: 30px;
+}
+
+
+.res
+{
+    padding-top: 30px;
+    padding-bottom: 190px;
+}
+
+
+.cccl
+{
+    text-align: center;
+    padding-top: 170px;
+    color: #fff;
+}
+.ques
+{
+    color: #fff;
+}
+.lab
+{
+    background-color: #fff;
+    height: 28px;
+}
+.cat1{
+color:white;}
+.errorlist
+    {
+        color: white;
+    }
+#r{
+ height: 500px;
+    margin:0px;
+    overflow:auto;
+    background:#1A1C2B;
+}
+#l{
+background-color:#242424;
+    height: 500px;
+    margin:0px;
+    width:100%;
+    overflow:hidden;
+}
+.r{
+background:#1A1C2B;
+position:relative;
+overflow:hidden;
+    top:-550px;
+    left:-150px;
+  height:1000px;
+  width: 700px;
+border-radius:10px;
+transform: rotate(60deg)
+}
+footer{
+background:#484848;}
+.welcome{
+padding:5px 0px 5px 0px;
+}
+.hei{
+min-height:350px;
+background:#242424;
+color:#fff;
+}
+
+#message
+{
+    color:white; 
+   padding: 0px 0px 0px 35px;
+
+}

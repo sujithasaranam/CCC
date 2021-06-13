@@ -1,0 +1,41 @@
+{% extends 'accounts/main.html' %}
+{% block content %}
+<div style="min-height:350px;
+background:#242424;
+color:#fff;">
+    <center>
+        <div class="container" style="background:#242424; ">
+   <h1 class="welcome">Weekly Assesments</h1>
+   {% if user.is_authenticated%}
+   <table class="table table-dark table-striped" style="width:70%;">
+      <tr style="border: 1px solid #dddddd;">
+         <th style="border: 1px solid #dddddd;">Title</th>
+         <th style="border: 1px solid #dddddd;">Statement</th>
+         <th style="border: 1px solid #dddddd;"></th>
+       </tr>
+      {%for s in stat%}
+      {%for pro in Weekly%}
+      {% ifequal s.category pro.category %}
+      <form action="{% url 'index' %}" method="POST">
+         {% csrf_token %}
+      <tr style="border: 1px solid #dddddd;">
+         <input type="hidden" name="wpid" value="{{pro.auto_increment_id}}">
+        <td style="border: 1px solid #dddddd;">{{pro.heading}}</td>
+        <td style="border: 1px solid #dddddd;">{{pro.problem}}</td>
+        <input type="hidden" name="wa" value="{{pro.flag}}">
+         <td style="border: 1px solid #dddddd;"> <a href="{% url 'index' %}"> <button type="submit" class="btn btn-warning" name="but" value="1" style="width:100%">Solve</button></a></td>
+      </tr>
+   </form>
+      {% endifequal %}
+      {%endfor%}
+      {%endfor%}
+      {%else%}
+      <div>
+          <p style="color:#fff">please login to code</p>
+      </div>
+      {%endif%}
+   </table>
+</div>
+    </center>
+</div>
+{% endblock %}

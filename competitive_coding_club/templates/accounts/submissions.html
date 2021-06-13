@@ -1,0 +1,61 @@
+{% extends 'accounts/main.html' %}
+{% block content %}
+
+<div style="min-height:350px;background:#242424;padding:0px 0px 10px 0px;">
+<br>
+<br>
+<!--div class="row d-flex justify-content-center mt-100">
+
+
+<div class="progress blue"> <span class="progress-left"> <span class="progress-bar"></span> </span> <span class="progress-right"> <span class="progress-bar"></span> </span>
+            <div class="progress-value">90%</div>
+        </div>-->
+       
+    {% if user.is_authenticated%}
+    <center>
+      <h3 style="color:#fff">submissions</h3>
+  </center>
+        <table class ="table table-dark table-striped" style="width: 60%; position: relative;margin-left: auto; margin-right: auto; ">
+            <tr style="border: 1px solid #dddddd;">
+               <th style="border: 1px solid #969696;">Assesment Type</th>
+                <th style="border: 1px solid #dddddd;">Problem Statement</th>
+              <th style="border: 1px solid #dddddd;">Marks</th>
+             </tr>
+             {%for c in ts1%} 
+             {%if c.dpid %}
+            <tr style="border: 1px solid #dddddd;">
+              <td style="border: 1px solid #dddddd;">Daily assesments</td>
+              <td style="border: 1px solid #dddddd;">{{c.problem}}</td>
+              <td style="border: 1px solid #dddddd;">{{c.marks}}</td>
+            </tr>
+            {%elif c.mpid%}
+            <tr style="border: 1px solid #dddddd;">
+                <td style="border: 1px solid #dddddd;">Monthly assesments</td>
+                <td style="border: 1px solid #dddddd;">{{c.problem}}</td>
+                <td style="border: 1px solid #dddddd;">{{c.marks}}</td>
+              </tr>
+              {%else%}
+              <tr style="border: 1px solid #dddddd;">
+                <td style="border: 1px solid #dddddd;">Weekly assesments</td>
+                <td style="border: 1px solid #dddddd;">{{c.problem}}</td>
+                <td style="border: 1px solid #dddddd;">{{c.marks}}</td>
+              </tr>
+            {%endif%}
+            {%endfor%}
+         </table>
+         <br>
+         {%else%}
+         <div>
+           <center>
+             <h2 style="color:#fff">please login to view your submissions</h2>
+            </center>
+         </div>
+         {%endif%}
+</div>
+
+
+
+
+</div>
+
+{% endblock %}

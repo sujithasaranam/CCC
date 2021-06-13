@@ -1,0 +1,41 @@
+{% extends 'accounts/main.html' %}
+{% block content %}
+
+<div>
+<!--div class="row d-flex justify-content-center mt-100">
+
+
+<div class="progress blue"> <span class="progress-left"> <span class="progress-bar"></span> </span> <span class="progress-right"> <span class="progress-bar"></span> </span>
+            <div class="progress-value">90%</div>
+        </div>-->
+       
+
+        <div style="background:#f3f3f3;font-family:bold;padding:15px 25px 15px 25px;">
+
+            <table id="myTable" class="table table-dark table-striped" style="color:#fff;width:80%" >
+                    <thead style="pointer-events:none;">
+            
+                <tr diabled>
+                    <th>Rank</th>
+                    <th>User Id</th>
+                    <th>Level</th>
+                    <th>Score</th>
+    
+                </tr>
+            </thead>
+            <tbody>
+                {%for i in leader%}
+
+                <tr>
+                    <td>{{forloop.counter }}</td>
+                    <td>{{i.username}}</td>
+                    <td>{{i.category}}</td>
+                    <td>{{i.total_marks}}</td>
+    
+                </tr>
+                {%endfor%}
+            </tbody>
+    </table>
+    </div>
+
+{% endblock %}
